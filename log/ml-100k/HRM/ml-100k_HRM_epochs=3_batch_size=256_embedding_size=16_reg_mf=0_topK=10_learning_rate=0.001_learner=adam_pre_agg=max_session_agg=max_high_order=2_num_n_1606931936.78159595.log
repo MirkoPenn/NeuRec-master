@@ -1,0 +1,54 @@
+2020-12-02 18:58:56.782: Dataset name: ml-100k
+The number of users: 943
+The number of items: 1682
+The number of ratings: 100000
+Average actions of users: 106.04
+Average actions of items: 59.45
+The sparsity of the dataset: 93.695331%
+2020-12-02 18:58:56.782: 
+
+NeuRec hyperparameters:
+recommender=HRM
+config_dir=./conf
+gpu_id=0
+gpu_mem=0.5
+data.input.path=dataset
+data.input.dataset=ml-100k
+data.column.format=UIRT
+data.convert.separator='\t'
+user_min=0
+item_min=0
+splitter=ratio
+ratio=0.8
+by_time=False
+metric=["Precision", "Recall", "NDCG", "MAP", "MRR"]
+topk=[10, 20]
+group_view=None
+rec.evaluate.neg=0
+test_batch_size=128
+num_thread=8
+
+HRM's hyperparameters:
+epochs=3
+batch_size=256
+embedding_size=16
+reg_mf=0
+topK=10
+learning_rate=0.001
+learner=adam
+pre_agg=max
+session_agg=max
+high_order=2
+num_neg=4
+loss_function=cross_entropy
+init_method=normal
+stddev=0.01
+verbose=1
+
+2020-12-02 18:58:59.042: metrics:	Precision@10	Precision@20	Recall@10   	Recall@20   	NDCG@10     	NDCG@20     	MAP@10      	MAP@20      	MRR@10      	MRR@20      
+2020-12-02 18:59:03.741: [iter 1 : loss : 0.496150, time: 2.853039]
+2020-12-02 18:59:05.876: epoch 1:	0.18366916  	0.15037139  	0.08585483  	0.14764012  	0.21221097  	0.20450911  	0.12074079  	0.09559201  	0.41098550  	0.41960302  
+2020-12-02 18:59:08.566: [iter 2 : loss : 0.378693, time: 2.690128]
+2020-12-02 18:59:10.543: epoch 2:	0.18472962  	0.15228023  	0.08752436  	0.14679493  	0.21764970  	0.20860058  	0.12519306  	0.09926956  	0.42674929  	0.43493211  
+2020-12-02 18:59:13.153: [iter 3 : loss : 0.363980, time: 2.609132]
+2020-12-02 18:59:15.226: epoch 3:	0.19331923  	0.15604487  	0.09589502  	0.15256235  	0.22630313  	0.21522591  	0.12950820  	0.10271097  	0.43883282  	0.44710869  

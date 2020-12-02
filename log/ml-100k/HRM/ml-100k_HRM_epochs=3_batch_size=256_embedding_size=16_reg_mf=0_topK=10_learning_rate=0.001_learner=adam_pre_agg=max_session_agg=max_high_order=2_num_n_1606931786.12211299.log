@@ -1,0 +1,47 @@
+2020-12-02 18:56:26.122: Dataset name: ml-100k
+The number of users: 943
+The number of items: 1682
+The number of ratings: 100000
+Average actions of users: 106.04
+Average actions of items: 59.45
+The sparsity of the dataset: 93.695331%
+2020-12-02 18:56:26.122: 
+
+NeuRec hyperparameters:
+recommender=HRM
+config_dir=./conf
+gpu_id=0
+gpu_mem=0.5
+data.input.path=dataset
+data.input.dataset=ml-100k
+data.column.format=UIRT
+data.convert.separator='\t'
+user_min=0
+item_min=0
+splitter=ratio
+ratio=0.8
+by_time=False
+metric=["Precision", "Recall", "NDCG", "MAP", "MRR"]
+topk=[10, 20]
+group_view=None
+rec.evaluate.neg=0
+test_batch_size=128
+num_thread=8
+
+HRM's hyperparameters:
+epochs=3
+batch_size=256
+embedding_size=16
+reg_mf=0
+topK=10
+learning_rate=0.001
+learner=adam
+pre_agg=max
+session_agg=max
+high_order=2
+num_neg=4
+loss_function=cross_entropy
+init_method=normal
+stddev=0.01
+verbose=1
+

@@ -1,0 +1,48 @@
+2020-12-02 19:38:53.431: Dataset name: msd
+The number of users: 918725
+The number of items: 10880
+The number of ratings: 7443519
+Average actions of users: 8.10
+Average actions of items: 684.15
+The sparsity of the dataset: 99.925533%
+2020-12-02 19:38:53.431: 
+
+NeuRec hyperparameters:
+recommender=HRM
+config_dir=./conf
+gpu_id=0
+gpu_mem=0.5
+data.input.path=dataset
+data.input.dataset=msd
+data.column.format=UIRT
+data.convert.separator='\t'
+user_min=0
+item_min=0
+splitter=given
+ratio=0.8
+by_time=False
+metric=["Precision", "Recall", "NDCG", "MAP", "MRR"]
+topk=[10, 20]
+group_view=None
+rec.evaluate.neg=0
+test_batch_size=128
+num_thread=8
+
+HRM's hyperparameters:
+epochs=3
+batch_size=256
+embedding_size=16
+reg_mf=0
+topK=10
+learning_rate=0.001
+learner=adam
+pre_agg=max
+session_agg=max
+high_order=2
+num_neg=4
+loss_function=cross_entropy
+init_method=normal
+stddev=0.01
+verbose=1
+
+2020-12-02 19:41:43.180: metrics:	Precision@10	Precision@20	Recall@10   	Recall@20   	NDCG@10     	NDCG@20     	MAP@10      	MAP@20      	MRR@10      	MRR@20      
