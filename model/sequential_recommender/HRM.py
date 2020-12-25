@@ -126,7 +126,9 @@ class HRM(SeqAbstractRecommender):
                              (epoch, total_loss/num_training_instances, time()-training_start_time))
             
             if epoch % self.verbose == 0:
-                self.logger.info("epoch %d:\t%s" % (epoch, self.evaluate()))
+                self.logger.info("epoch %d complete" % epoch)
+
+        self.logger.info("final epoch:\t%s" % (self.evaluate()))
 
     @timer
     def evaluate(self):
