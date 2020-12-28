@@ -105,11 +105,6 @@ class HRM(SeqAbstractRecommender):
     # ---------- training process -------
     def train_model(self):
 
-        conf = Configurator("NeuRec.properties", default_section="hyperparameters")
-        conf["data.input.dataset"] = "msdfinal_1"
-        dataset = Dataset(conf)
-        self.dataset = dataset
-
         self.logger.info(self.evaluator.metrics_info())
         data_iter = TimeOrderPointwiseSampler(self.dataset, high_order=self.high_order,
                                               neg_num=self.num_negatives,
